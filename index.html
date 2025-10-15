@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Salesforce Data Generator</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="app-title"><span class="material-icons gradient-icon">dataset</span> Salesforce Data Generator</h1>
+        <div class="tabs-container">
+            <div class="tabs" id="tabs"></div>
+        </div>
+        <div class="glass-card">
+            <form id="dataGenForm" autocomplete="off">
+                <div class="form-group">
+                    <label for="numRecords" class="form-label">Number of records to generate</label>
+                    <input type="number" id="numRecords" required min="1" value="10" class="form-input accent-input" />
+                </div>
+                <div class="instruction">
+                    <span class="material-icons section-icon">info</span>
+                    Select below combinations if you have any preference
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <div class="form-label">States</div>
+                        <div id="states" class="multiselect"></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">Product Group</div>
+                        <div id="productGroups" class="multiselect"></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">Group Size</div>
+                        <div id="groupSizes" class="multiselect"></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">Funding Type</div>
+                        <div id="fundingTypes" class="multiselect"></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label">Products</div>
+                        <div id="products" class="multiselect"></div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn primary glass-btn">
+                        <span class="material-icons">play_arrow</span>
+                        Generate
+                    </button>
+                    <button type="button" class="btn secondary glass-btn" id="downloadBtn" style="display:none;">
+                        <span class="material-icons">download</span>
+                        Download CSV
+                    </button>
+                    <button type="button" class="btn advanced glass-btn" id="advancedBtn">
+                        <span class="material-icons">tune</span>
+                        Advanced Options
+                    </button>
+                </div>
+                <div id="successMsg"></div>
+            </form>
+        </div>
+        <div id="advancedModal" class="modal" style="display:none;">
+            <div class="modal-content glass-modal" id="modalContent">
+                <span class="close" id="closeAdv">&times;</span>
+                <h3 class="adv-title gradient-text"><span class="material-icons gradient-icon">tune</span> Advanced
+                    Options</h3>
+                <div id="advFormArea"></div>
+                <div id="advancedError" class="adv-error"></div>
+                <div style="text-align:right;margin-top:18px;">
+                    <button type="button" class="btn primary glass-btn" id="applyAdvancedBtn">Apply Advanced</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
