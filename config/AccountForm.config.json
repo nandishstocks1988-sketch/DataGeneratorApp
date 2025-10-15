@@ -1,0 +1,10 @@
+{
+    "randomize": {
+        "Account Name": "Demo_{randNum:6}_Account",
+        "Phone": "555{randNum:7}",
+        "Email": "{randEmail}",
+        "Region": "{randChoice:Central,West,East,South}",
+        "GUID": "{randGuid}",
+        "Original_Effective_Date": "{randDate:2020-01-01,2025-12-31}"
+    }
+}
